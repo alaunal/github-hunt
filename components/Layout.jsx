@@ -53,7 +53,7 @@ const Layout = ({ children, isBreadcrumb = false }) => {
       </Head>
       <Header />
       <main className="py-6 lg:py-10">
-        <div className="container px-5 md:px-0">
+        <div className="container px-5 lg:px-0">
           {isBreadcrumb && (
             <div className="flex justify-center mb-8">
               <div className="w-full lg:w-3/5">

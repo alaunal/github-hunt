@@ -45,58 +45,13 @@ const CardUser = ({ user }) => {
                 </div>
               </div>
               <div className="pl-4">
-                <h2 className="text-lg md:text-2xl font-medium md:font-semibold text-gray-700">{user.name}</h2>
+                <h2 className="text-lg md:text-2xl font-medium md:font-semibold text-gray-700">
+                  {user.name}
+                </h2>
                 <p className="text-xs md:text-base text-gray-500">@{user.login}</p>
               </div>
             </div>
 
-            <div className="py-3 md:py-4">
-              {!isEmpty(user.company) && (
-                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
-                  <BsBuilding className="inline-block mr-2" />
-                  {user.company}
-                </p>
-              )}
-
-              {!isEmpty(user.email) && (
-                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
-                  <BsEnvelope className="inline-block mr-2" />
-                  <a href="mailto:theninja@gmail.com" className="underline hover:text-blue-500">
-                    {user.email}
-                  </a>
-                </p>
-              )}
-
-              {!isEmpty(user.location) && (
-                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
-                  <BsPinMap className="inline-block mr-2" />
-                  {user.location}
-                </p>
-              )}
-
-              {!isEmpty(user.blog) && (
-                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
-                  <BsShare className="inline-block mr-2" />
-                  <a href={user.blog} target="_blank" className="underline hover:text-blue-500">
-                    Blog
-                  </a>
-                </p>
-              )}
-
-              {!isEmpty(user.twitter_username) && (
-                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
-                  <BsTwitter className="inline-block mr-2" />@{user.twitter_username}
-                </p>
-              )}
-            </div>
-          </div>
-
-          <div className="w-full">
-            {!isEmpty(user.bio) && (
-              <div className="pt-3 md:pl-3 md:pt-0 border-t-4 md:border-l-4 md:border-l-0 border-gray-500 w-full block mb-8">
-                <em className="text-xs md:text-sm text-gray-400">{user.bio}</em>
-              </div>
-            )}
             <div className="w-full grid grid-cols-2 gap-3">
               <div className="p-4 bg-gray-100 rounded-lg">
                 <Link href={`/user/${user.login}/followers`}>
@@ -138,6 +93,54 @@ const CardUser = ({ user }) => {
                   </div>
                 </Link>
               </div>
+            </div>
+          </div>
+
+          <div className="w-full">
+            {!isEmpty(user.bio) && (
+              <div className="pt-3 md:pl-3 md:pt-0 border-t-4 md:border-l-4 md:border-t-0 border-gray-500 w-full block mb-8">
+                <em className="text-xs md:text-sm text-gray-400">{user.bio}</em>
+              </div>
+            )}
+
+            <div className="py-3 md:py-4">
+              {!isEmpty(user.company) && (
+                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
+                  <BsBuilding className="inline-block mr-2" />
+                  {user.company}
+                </p>
+              )}
+
+              {!isEmpty(user.email) && (
+                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
+                  <BsEnvelope className="inline-block mr-2" />
+                  <a href="mailto:theninja@gmail.com" className="underline hover:text-blue-500">
+                    {user.email}
+                  </a>
+                </p>
+              )}
+
+              {!isEmpty(user.location) && (
+                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
+                  <BsPinMap className="inline-block mr-2" />
+                  {user.location}
+                </p>
+              )}
+
+              {!isEmpty(user.blog) && (
+                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
+                  <BsShare className="inline-block mr-2" />
+                  <a href={user.blog} target="_blank" className="underline hover:text-blue-500">
+                    Blog
+                  </a>
+                </p>
+              )}
+
+              {!isEmpty(user.twitter_username) && (
+                <p className="text-xs md:text-sm text-gray-600 flex items-center mb-3">
+                  <BsTwitter className="inline-block mr-2" />@{user.twitter_username}
+                </p>
+              )}
             </div>
           </div>
         </div>
